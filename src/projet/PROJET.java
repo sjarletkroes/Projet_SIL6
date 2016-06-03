@@ -7,7 +7,7 @@ package projet;
 
 /**
  *
- * @author me
+ * @author goldwing
  */
 public class PROJET {
 
