@@ -7,8 +7,8 @@ package projet.administration;
 
 /**
  *
- * @author me
+ * @author Goldwing
  */
-public class NewClass {
+public interface ClientServeurRMIImpl {
     
 }
