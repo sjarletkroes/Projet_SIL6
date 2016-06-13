@@ -1,0 +1,48 @@
+
+module Corba {
+
+    struct Partie {
+        long idPartie;
+        string nomPartie;
+        long nbrMaxJoueurPartie;
+      };
+
+    typedef sequence<Partie> Parties;
+
+    struct Joueur {
+        string nom;
+        string motDePasse;
+        string identifiant;
+      };
+
+      typedef sequence<Joueur> Joueurs;
+
+
+    interface JoueurAction {
+        string creerCompte(in string identifiant,in string motDePasse);
+        string authentifier(in string identifiant,in string motDePasse);
+        string deconnecter(in string identifiant);
+        long donnerScore(in string identifiant);
+        Joueurs donnerListeConnectes(in string identifiant);
+        Joueurs donnerClassement(in string identifiant);
+      };
+
+      
+      
+    typedef sequence<Partie> PartieList;
+
+    interface PartieAction {
+        long createPartie(in Joueur J, out Partie p);
+        string connectToPartie(in Joueur J, in Partie p);
+        string disconnectToPartie(in Joueur J, in Partie P);
+        long getScoreJoueur(in Joueur J);
+        PartieList getPartiesEnAttente();
+        PartieList getPartiesEnCours();
+      };
+
+};
+
+
+
+
+
