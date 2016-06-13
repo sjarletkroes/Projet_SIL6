@@ -25,11 +25,6 @@ public class CorbaClient {
             InitialContext ctxt = new InitialContext();
             Object Stub = ctxt.lookup("CorbaServer");
             JoueurAction jActStub = JoueurActionHelper.narrow((org.omg.CORBA.Object) Stub);
-//            System.out.println("le joueur veut créer un compte");
-//            
-//            String rep = jActStub.createJoueur("TOTO", "mdp");
-//            System.out.println("--------- "+ rep +" ----------------------");
-//            System.out.println("--------- FIN ----------------------");
             
             boolean jeu = true;
             System.out.println("Bonjour et binvennue jeune padawan !");
