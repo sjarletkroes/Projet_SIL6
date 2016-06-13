@@ -1,0 +1,42 @@
+
+module tier1_Corba {
+    
+    struct Joueur {
+        string login;
+        string pass;
+        long score;
+      };
+
+      typedef sequence<Joueur> JoueurList;
+
+
+    interface JoueurAction {
+        string createJoueur(in string login,in string pass);
+        string connectJoueur(in string login,in string pass);
+        string disconectJoueur(in string login);
+        long getScoreJoueur(in string login);
+        JoueurList getJoueursConnect();
+        JoueurList getJoueursOrder();
+      };
+
+      struct Partie {
+        long idPartie;
+        string nomPartie;
+        long nbrJoueurPartie;
+      };
+      
+    typedef sequence<Partie> PartieList;
+
+    interface PartieAction {
+        long createPartie(in Joueur J, out Partie p);
+        void connectToPartie(in Joueur J, in Partie p);
+        void disconnectToPartie(in Joueur J, in Partie P);
+        long getScoreJoueur(in Joueur J);
+        PartieList getPartiesEnAttente();
+        PartieList getPartiesEnCours();
+      };
+
+};
+
+
+
